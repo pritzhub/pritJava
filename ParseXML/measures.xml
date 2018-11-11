@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<measurements>
+    <deviceid id="deviceid101">
+        <pathname>devivepathname is</pathname>
+        <measurementname>measurementname is</measurementname>
+		<measurementtimestamp>2018-01-04</measurementtimestamp>
+		<measurementdesc>measurementdesc is</measurementdesc>
+		<measurementvalue>105</measurementvalue>
+        <measurementquality>excellent</measurementquality>
+    </deviceid>
+    <deviceid id="deviceid102">
+        <pathname>devivepathname 2 is</pathname>
+        <measurementname>measurementname 2 is</measurementname>
+		<measurementtimestamp>2018-01-05</measurementtimestamp>
+		<measurementdesc>measurementdesc 2 is</measurementdesc>
+		<measurementvalue>110</measurementvalue>
+        <measurementquality>awesome</measurementquality>
+    </deviceid>
+</measurements>
