@@ -1,0 +1,39 @@
+JAVA Code:
+=====================================
+ 
+     public static void jsonPathMethods(String payload) {
+    	DocumentContext jsonContext = JsonPath.parse(payload);  // payload is a String form of JSON file.
+    	String key = "$.elements.*";
+    	System.out.println("value of address "+key+" ="+ jsonContext.read(key));
+    	
+    	String DeviceIdPath = "$['from']['deviceId']";
+    	String transmitTimestamp = "$['t']";
+    	String MeasurementNamePath = "$.elements.[*].n";
+    	String recordTimestampPath = "$.elements.[*].records.[*].t";
+    	String MeasurementValuePath = "$.elements.[*].records.[*].v";
+    	String qualityPath = "$.elements.[*].records.[*].q";
+    	
+    	System.out.println("------Single Element---------------------------------");
+    	System.out.println(" DeviceId = "+ jsonContext.read(DeviceIdPath));
+    	System.out.println(" Transmit Timestamp = "+ jsonContext.read(transmitTimestamp));
+    	System.out.println("-----------LIST/Array Elements----------------------------");
+    	System.out.println(" MeasurementName(s) = "+ jsonContext.read(MeasurementNamePath));
+    	System.out.println(" recordTimestamp(s) = "+ jsonContext.read(recordTimestampPath));
+    	System.out.println(" MeasurementValue(s) = "+ jsonContext.read(MeasurementValuePath));
+    	System.out.println(" Quality(s) = "+ jsonContext.read(qualityPath));
+    }
+	
+	
+OUTPUT OF JAVA Code:
+=====================================
+
+
+value of address $.elements.* =[{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":25.03737,"i":2068}],"count":1,"n":"TEMP"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":50.0,"i":2068}],"count":1,"n":"FREQ"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":220.03842,"i":2068}],"count":1,"n":"VRMSA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":219.70237,"i":2068}],"count":1,"n":"VRMSB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":220.19691,"i":2068}],"count":1,"n":"VRMSC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-9.85277,"i":2068}],"count":1,"n":"IRMSA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":7.34283,"i":2068}],"count":1,"n":"IRMSB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":2.99373,"i":2068}],"count":1,"n":"IRMSC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-1250.21447,"i":2068}],"count":1,"n":"WATTHRA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":887.71948,"i":2068}],"count":1,"n":"WATTHRB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":382.72506,"i":2068}],"count":1,"n":"WATTHRC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-54.76239,"i":2068}],"count":1,"n":"VARHRA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":37.80604,"i":2068}],"count":1,"n":"VARHRB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":16.43738,"i":2068}],"count":1,"n":"VARHRC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-1251.8612,"i":2068}],"count":1,"n":"VAHRA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":888.86926,"i":2068}],"count":1,"n":"VAHRB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":383.2275,"i":2068}],"count":1,"n":"VAHRC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-2163.50097,"i":2068}],"count":1,"n":"WATTA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":1609.89099,"i":2068}],"count":1,"n":"WATTB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":658.52893,"i":2068}],"count":1,"n":"WATTC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-139.41661,"i":2068}],"count":1,"n":"VARA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":103.86761,"i":2068}],"count":1,"n":"VARB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":30.00405,"i":2068}],"count":1,"n":"VARC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":-2167.98828,"i":2068}],"count":1,"n":"VAA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":1613.23815,"i":2068}],"count":1,"n":"VAB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":659.21209,"i":2068}],"count":1,"n":"VAC"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":0.99793,"i":2068}],"count":1,"n":"PFA"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":0.99792,"i":2068}],"count":1,"n":"PFB"},{"records":[{"q":"good","t":"2016-07-05T15:13:53.998Z","v":0.99896,"i":2068}],"count":1,"n":"PFC"}]
+------Single Element---------------------------------
+ DeviceId = SpoonyDotVisionDev
+ Transmit Timestamp = 2016-07-05T15:13:54.013Z
+-----------LIST/Array Elements----------------------------
+ MeasurementName(s) = ["TEMP","FREQ","VRMSA","VRMSB","VRMSC","IRMSA","IRMSB","IRMSC","WATTHRA","WATTHRB","WATTHRC","VARHRA","VARHRB","VARHRC","VAHRA","VAHRB","VAHRC","WATTA","WATTB","WATTC","VARA","VARB","VARC","VAA","VAB","VAC","PFA","PFB","PFC"]
+ recordTimestamp(s) = ["2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z","2016-07-05T15:13:53.998Z"]
+ MeasurementValue(s) = [25.03737,50.0,220.03842,219.70237,220.19691,-9.85277,7.34283,2.99373,-1250.21447,887.71948,382.72506,-54.76239,37.80604,16.43738,-1251.8612,888.86926,383.2275,-2163.50097,1609.89099,658.52893,-139.41661,103.86761,30.00405,-2167.98828,1613.23815,659.21209,0.99793,0.99792,0.99896]
+ Quality(s) = ["good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good","good"]

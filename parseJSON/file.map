@@ -1,0 +1,11 @@
+Device_Id=          $['from']['deviceId']
+Parent_Device_Id=
+Primary_Location=
+Secondary_Location=
+TransmitTimestamp=$['t']
+Measurement_Name=$.elements.[index1].n
+RecordTimestamp=$.elements.[index1].records.[index2].t
+Measurement_Value=$.elements.[index1].records.[index2].v
+Quality=$.elements.[index1].records.[index1].q
+Multiplier=
+Unit_Of_Measurement=
